@@ -10,7 +10,7 @@ import Catagories from './Components/Catagories';
 
 function App() {
   return (
-    <Router>
+    <Router className="route">
       <Navbar />
       <Routes>
         <Route path="/" element={<Book />} />
