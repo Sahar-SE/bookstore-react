@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { checkStatus } from '../Redux/Catagories/Catagories';
+import { checkStatus } from '../Redux/Categories/Categories';
 
-const Catagories = () => {
-  const status = useSelector((state) => state.catagories);
+const Categories = () => {
+  const status = useSelector((state) => state.categories);
   const dispatch = useDispatch();
   const checkCatStatus = () => {
     dispatch(checkStatus());
@@ -18,4 +18,4 @@ const Catagories = () => {
   );
 };
 
-export default Catagories;
+export default Categories;
