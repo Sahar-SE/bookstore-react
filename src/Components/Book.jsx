@@ -36,7 +36,7 @@ const Book = ({
           </div>
         </div>
         <div>
-          <p className="percentage">60%</p>
+          <p className="percentage">40%</p>
           <p className="completed">Completed</p>
         </div>
       </div>
