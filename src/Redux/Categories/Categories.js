@@ -1,5 +1,5 @@
 // Actions
-const CHECK_STATUS = 'bookstore-react/categoriesReducer/CHECK_STATUS';
+const CHECK_STATUS = 'bookstore/categoriesReducer/CHECK_STATUS';
 
 // Reducer
 export default function categoriesReducer(state = [], action = {}) {

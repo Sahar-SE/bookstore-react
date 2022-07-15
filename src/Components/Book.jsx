@@ -1,19 +1,20 @@
 import React from 'react';
-import Form from './Form';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../Redux/Books/Books';
 
-const Book = ({ title, author, id }) => {
+const Book = ({
+  id, title, author, category,
+}) => {
   const dispatch = useDispatch();
   const deleteBook = (bookId) => {
-    dispatch(removeBook(bookId));
+    dispatch(removeBook(Number(bookId)));
   };
 
   return (
     <div className="book-container">
       <div className="book-info">
-        <p className="book-categorie">Category</p>
+        <p className="book-category">{category}</p>
         <h3 className="book-title">{title}</h3>
         <h4 className="book-author">{author}</h4>
         <div className="book-buttons">
@@ -25,24 +26,34 @@ const Book = ({ title, author, id }) => {
         </div>
       </div>
       <div className="book-progress">
-        <div className="progress-text">
-          <p>50%</p>
-          <p>Completed</p>
+        <div className="circle-wrap">
+          <div className="circle">
+            <div className="mask half">
+              <div className="fill">
+                <div className="inside-circle" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p className="percentage">60%</p>
+          <p className="completed">Completed</p>
         </div>
       </div>
       <div className="book-update">
-        <p>CURRENT CHAPTER</p>
-        <p>Chapter 17</p>
+        <p className="current-chap">CURRENT CHAPTER</p>
+        <p className="chap-num">Chapter 5</p>
         <button type="button">UPDATE PROGRESS</button>
       </div>
     </div>
-     );
+  );
 };
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Book;

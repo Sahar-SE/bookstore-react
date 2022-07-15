@@ -1,27 +1,23 @@
-import logo from './logo.svg';
-import Book from './Components/Book';
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './Redux/configureStore';
+import './App.css';
+import BooksList from './Components/BooksList';
+import Categories from './Components/Categories';
 import Navbar from './Components/Navbar';
-import Catagories from './Components/Catagories';
 
 function App() {
   return (
-    <Router className="route">
+    <>
       <Navbar />
-       <Provider store={store}>
-      <Routes>
-        <Route path="/" element={<Book />} />
-        <Route path="/catagories" element={<Catagories />} />
-      </Routes>
-      </Provider>
-    </Router>
-    
+      <main>
+        <Routes>
+          <Route path="/" element={<BooksList />} />
+          <Route path="/categories" element={<Categories />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 
